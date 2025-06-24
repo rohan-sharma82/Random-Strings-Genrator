@@ -1,0 +1,18 @@
+import random
+import string
+
+def number(length):
+    line = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.choice(line) for _ in range(length))
+
+strings = []
+
+for i in range(100):
+    strings.append(number(random.randint(5, 20)))
+
+for i,s in enumerate(strings):
+    print(i,'-',s)
+
+with open('so Random strings.txt','w') as done:
+  for write in strings:
+    done.write(write+'\n')
